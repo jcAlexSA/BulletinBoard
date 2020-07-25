@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Registration";
+}
+
+<div class="row">
+    @using (Ajax.BeginForm("Registrate", new AjaxOptions { UpdateTargetId = "results" }))
+    {
+        <input type="text" name="firstName" value="alexey" />
+        <input type="submit" value="Registrate" />
+    }
+    <div id="results"></div>
+</div>
