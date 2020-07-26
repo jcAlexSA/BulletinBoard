@@ -27,5 +27,18 @@ namespace DataAccessLayer.Repositories
 
             return user;
         }
+
+        /// <summary>
+        /// Check if user exists by email and passwordHash
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="passwordHash"></param>
+        /// <returns></returns>
+        public bool IsUserExists(string email, string passwordHash)
+        {
+            bool isExists = this.DbContext.Set<User>().Any(u => u.Email.Equals(email) && u.Password.Equals(passwordHash));
+
+            return isExists;
+        }
     }
 }

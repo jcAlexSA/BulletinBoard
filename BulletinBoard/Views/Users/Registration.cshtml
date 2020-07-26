@@ -4,47 +4,53 @@
     ViewBag.Title = "Registration";
 }
 
-
-<div class="container">
+<div class="">
     <h2 class="page-header">Registration</h2>
-    @using (Ajax.BeginForm("Registrate", new AjaxOptions { UpdateTargetId = "results" }, null, new { @class = "form-horizontal" }))
+    @using (Ajax.BeginForm("Registration", new AjaxOptions { }))
     {
-        <div class="form-group">
-            @Html.LabelFor(u => u.FirstName, new { @class = "col col-md-2 col-md-offset-2 control-label" })
-            @Html.TextBoxFor(u => u.FirstName, new { @class = "col col-md-5 form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(u => u.LastName, new { @class = "col col-md-2 col-md-offset-2 control-label" })
-            @Html.TextBoxFor(u => u.LastName, new { @class = "col col-md-4 form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(u => u.Email, new { @class = "col col-md-2 col-md-offset-2 control-label" })
-            @Html.TextBoxFor(u => u.Email, new { @class = "col col-md-4 form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(u => u.Password, new { @class = "col col-md-2 col-md-offset-2 control-label" })
-            @Html.PasswordFor(u => u.Password, new { @class = "col col-md-4 form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(u => u.RepeatPassword, new { @class = "col col-md-2 col-md-offset-2 control-label" })
-            @Html.PasswordFor(u => u.RepeatPassword, new { @class = "col col-md-4 form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(u => u.Age, new { @class = "col col-md-2 col-md-offset-2 control-label" })
-            @Html.TextBoxFor(u => u.Age, new { @class = "col col-md-4 form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(u => u.Gender, new { @class = "col col-md-2 col-md-offset-2 control-label" })
-            @Html.DropDownListFor(u => u.Gender, new SelectList(new[] { "Male", "Female" }), new { @class = "col col-md-4 form-control" })
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(u => u.Phone, new { @class = "col col-md-2 col-md-offset-2 control-label" })
-            @Html.TextBoxFor(u => u.Phone, new { @class = "col col-md-4 form-control" })
-        </div>
+        @Html.ValidationSummary(true){
+            <div class="form-group row">
+                @Html.LabelFor(u => u.FirstName, new { @class = "col-md-2 col-form-label offset-md-2" })
+                @Html.TextBoxFor(u => u.FirstName, new { @class = "col-md-4 form-control" })
+                @Html.ValidationMessageFor(u => u.FirstName, "Enter First Name", new { @class = "col-md-3 col-form-label" })
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.LastName, new { @class = "col-md-2 col-form-label offset-md-2" })
+                @Html.TextBoxFor(u => u.LastName, new { @class = "col-md-4 form-control" })
+                @Html.ValidationMessageFor(u => u.LastName, "Enter Last Name", new { @class = "col-md-3 col-form-label" })
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Email, new { @class = "col-md-2 col-form-label offset-md-2" })
+                @Html.TextBoxFor(u => u.Email, new { @class = "col-md-4 form-control" })
+                @Html.ValidationMessageFor(u => u.Email, "Enter Email", new { @class = "col-md-3 col-form-label" })
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Password, new { @class = "col-md-2 col-form-label offset-md-2" })
+                @Html.PasswordFor(u => u.Password, new { @class = "col-md-4 form-control" })
+                @Html.ValidationMessageFor(u => u.Password, "Enter Password", new { @class = "col-md-3 col-form-label" })
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.RepeatPassword, new { @class = "col-md-2 col-form-label offset-md-2" })
+                @Html.PasswordFor(u => u.RepeatPassword, new { @class = "col-md-4 form-control" })
+                @Html.ValidationMessageFor(u => u.RepeatPassword, null, new { @class = "col-md-3 col-form-label" })
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Age, new { @class = "col-md-2 col-form-label offset-md-2" })
+                @Html.TextBoxFor(u => u.Age, new { @class = "col-md-4 form-control" })
+                @Html.ValidationMessageFor(u => u.Age, "Enter Age", new { @class = "col-md-2 col-form-label" })
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Gender, new { @class = "col-md-2 col-form-label offset-md-2" })
+                @Html.DropDownListFor(u => u.Gender, new SelectList(new[] { "Male", "Female" }), new { @class = "col-md-4 form-control" })
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Phone, new { @class = "col-md-2 col-form-label offset-md-2" })
+                @Html.TextBoxFor(u => u.Phone, new { @class = "col-md-4 form-control" })
+                @Html.ValidationMessageFor(u => u.Phone, "Enter Correct Phone number", new { @class = "col-md-3 col-form-label" })
+            </div>
 
-        <div class="text-center"><input class="btn btn-default" type="submit" value="Registrate" /></div>
-
-        <div id="results"></div>
+            <div class="text-center"><input class="btn btn-primary" type="submit" value="Registrate" /></div>
+        }
     }
 
 </div>

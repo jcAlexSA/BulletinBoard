@@ -11,5 +11,7 @@ namespace Core.Interfaces.Managers
     public interface IUsersManager
     {
         void Add(UserDto user);
+
+        bool IsUserExists(SignInUserDto user);
     }
 }

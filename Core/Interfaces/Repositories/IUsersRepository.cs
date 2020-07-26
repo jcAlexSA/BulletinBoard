@@ -10,5 +10,7 @@ namespace Core.Interfaces.Repositories
     public interface IUsersRepository : IBaseRepository<User>
     {
         User GetUserByEmail(string email);
+
+        bool IsUserExists(string email, string passwordHash);
     }
 }

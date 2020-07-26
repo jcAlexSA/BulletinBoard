@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\SignInUserDto.cs" />
     <Compile Include="DTOs\UserDto.cs" />
     <Compile Include="DataContext\IDataContext.cs" />
     <Compile Include="Interfaces\Managers\IUsersManager.cs" />

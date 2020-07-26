@@ -1,0 +1,27 @@
+﻿@model BulletinBoard.Models.Users.SignInUserRequest
+
+@{
+    ViewBag.Title = "Sign In";
+}
+
+<div class="">
+    <h2 class="page-header">Registration</h2>
+    @using (Ajax.BeginForm("SignIn", new AjaxOptions { }))
+    {
+        @Html.ValidationSummary(true){
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Email, new { @class = "col-md-2 col-form-label offset-md-2" })
+                @Html.TextBoxFor(u => u.Email, new { @class = "col-md-4 form-control" })
+                @Html.ValidationMessageFor(u => u.Email, "Enter Email", new { @class = "col-md-3 col-form-label" })
+            </div>
+            <div class="form-group row">
+                @Html.LabelFor(u => u.Password, new { @class = "col-md-2 col-form-label offset-md-2" })
+                @Html.PasswordFor(u => u.Password, new { @class = "col-md-4 form-control" })
+                @Html.ValidationMessageFor(u => u.Password, "Enter Password", new { @class = "col-md-3 col-form-label" })
+            </div>
+
+            <div class="text-center"><input class="btn btn-primary" type="submit" value="Sing In" /></div>
+        }
+    }
+
+</div>
