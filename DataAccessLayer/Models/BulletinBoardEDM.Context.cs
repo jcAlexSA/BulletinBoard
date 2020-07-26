@@ -27,6 +27,7 @@ namespace DataAccessLayer.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Advert> Advert { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

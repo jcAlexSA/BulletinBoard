@@ -51,13 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTOs\AdvertDto.cs" />
     <Compile Include="DTOs\SignInUserDto.cs" />
     <Compile Include="DTOs\UserDto.cs" />
     <Compile Include="DataContext\IDataContext.cs" />
     <Compile Include="Interfaces\Managers\IUsersManager.cs" />
+    <Compile Include="Interfaces\Repositories\IAdvertsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IBaseRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUsersRepository.cs" />
     <Compile Include="Interfaces\UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Models\Advert.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

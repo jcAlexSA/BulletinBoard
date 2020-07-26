@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace BulletinBoard.Controllers
 {
-    public class HomeController : Controller
+    public class AdvertsController : Controller
     {
         public ActionResult Index()
         {

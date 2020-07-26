@@ -14,6 +14,12 @@ namespace Core.Models
     
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            this.Advert = new HashSet<Advert>();
+        }
+    
         public int Id { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -22,5 +28,8 @@ namespace Core.Models
         public string Phone { get; set; }
         public Nullable<int> Age { get; set; }
         public string Gender { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Advert> Advert { get; set; }
     }
 }

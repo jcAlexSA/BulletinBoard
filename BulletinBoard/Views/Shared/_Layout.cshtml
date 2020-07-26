@@ -9,17 +9,17 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        @Html.ActionLink("Bulletin Board", "Index", "Home", null, new { @class = "navbar-brand" })
+        @Html.ActionLink("Bulletin Board", "Index", "Adverts", null, new { @class = "navbar-brand" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    @Html.ActionLink("My Adverts", "MyAdverts", "Home", null, new { @class = "nav-link" })
+                    @Html.ActionLink("My Adverts", "MyAdverts", "Adverts", null, new { @class = "nav-link" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("New Advert", "NewAdvert", "Home", null, new { @class = "nav-link" })
+                    @Html.ActionLink("New Advert", "NewAdvert", "Adverts", null, new { @class = "nav-link" })
                 </li>
                 @if (Context.Request.Cookies[System.Configuration.ConfigurationManager.AppSettings[BulletinBoard.Infrastructure.Constants.AuthenticationCookieName]] == null)
                 {

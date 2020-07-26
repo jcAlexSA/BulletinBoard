@@ -61,7 +61,7 @@ namespace BulletinBoard.Controllers
                 HttpCookie cookie = new HttpCookie(ConfigurationManager.AppSettings[Constants.AuthenticationCookieName], enTicket);
                 Response.Cookies.Add(cookie);
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Adverts");
             }
 
             return View("Registration");
@@ -95,7 +95,7 @@ namespace BulletinBoard.Controllers
                     HttpCookie cookie = new HttpCookie(ConfigurationManager.AppSettings[Constants.AuthenticationCookieName], enTicket);
                     Response.Cookies.Add(cookie);
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Adverts");
                 }
             }
 
@@ -111,7 +111,7 @@ namespace BulletinBoard.Controllers
                 Response.Cookies.Add(cookie);
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Adverts");
         }
     }
 }
