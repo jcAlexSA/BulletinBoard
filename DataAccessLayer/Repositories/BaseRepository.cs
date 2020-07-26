@@ -17,5 +17,11 @@ namespace DataAccessLayer.Repositories
         }
 
         protected DbContext DbContext { get; private set; }
+
+
+        public void Add(T entity)
+        {
+            this.DbContext.Set<T>().Add(entity);
+        }
     }
 }

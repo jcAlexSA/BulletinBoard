@@ -11,6 +11,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.UI.HtmlControls;
 
 namespace BusinessLogicLayer
 {
@@ -35,7 +36,7 @@ namespace BusinessLogicLayer
                 .ForMember(ud => ud.Email, opt => opt.MapFrom(cur => cur.Email))
                 .ForMember(ud => ud.Password, opt => opt.MapFrom(cur => cur.Password))
                 .ForMember(ud => ud.FirstName, opt => opt.MapFrom(cur => cur.FirstName))
-                .ForMember(ud => ud.SecondName, opt => opt.MapFrom(cur => cur.LastName))
+                .ForMember(ud => ud.SecondName, opt => opt.MapFrom(cur => cur.SecondName))
                 .ForMember(ud => ud.Gender, opt => opt.MapFrom(cur => cur.Gender))
                 .ForMember(ud => ud.Phone, opt => opt.MapFrom(cur => cur.Phone))
                 .ForMember(ud => ud.Age, opt => opt.MapFrom(cur => cur.Age))
@@ -44,8 +45,27 @@ namespace BusinessLogicLayer
             User user = mapper.Map<UserDto, User>(userDto);
 
             // todo add check if user exists
-            this.usersRepository.Add(user);
-            this.unitOfWork.Save();
+            if (this.GetByEmail(user.Email) == null)
+            {
+                this.usersRepository.Add(user);
+                this.unitOfWork.Save();
+            }
+            else
+            {
+                throw new ArgumentException("This email is already used.");
+            }
+        }
+
+        public User GetByEmail(string email)
+        {
+            if(string.IsNullOrEmpty(email))
+            {
+                return null;
+            }
+
+            User user = this.usersRepository.GetUserByEmail(email);
+
+            return user;
         }
     }
 }

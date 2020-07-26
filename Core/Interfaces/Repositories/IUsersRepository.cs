@@ -9,6 +9,6 @@ namespace Core.Interfaces.Repositories
 {
     public interface IUsersRepository : IBaseRepository<User>
     {
-        void Add(User user);
+        User GetUserByEmail(string email);
     }
 }

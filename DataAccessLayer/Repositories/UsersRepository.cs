@@ -15,9 +15,17 @@ namespace DataAccessLayer.Repositories
         {
         }
 
-        public void Add(User user)
+        /// <summary>
+        /// Get user entity by email.
+        /// </summary>
+        /// <param name="email">User email address.s</param>
+        /// <returns>User entity.</returns>
+        public User GetUserByEmail(string email)
         {
-            this.DbContext.Set<User>().Add(user);
+            User user = this.DbContext.Set<User>().Where(u => u.Email.Equals(email))
+                .FirstOrDefault();
+
+            return user;
         }
     }
 }

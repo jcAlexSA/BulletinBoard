@@ -1,12 +1,50 @@
-﻿@{
+﻿@model BulletinBoard.Models.Users.CreateUserRequest
+
+@{
     ViewBag.Title = "Registration";
 }
 
-<div class="row">
-    @using (Ajax.BeginForm("Registrate", new AjaxOptions { UpdateTargetId = "results" }))
+
+<div class="container">
+    <h2 class="page-header">Registration</h2>
+    @using (Ajax.BeginForm("Registrate", new AjaxOptions { UpdateTargetId = "results" }, null, new { @class = "form-horizontal" }))
     {
-        <input type="text" name="firstName" value="alexey" />
-        <input type="submit" value="Registrate" />
+        <div class="form-group">
+            @Html.LabelFor(u => u.FirstName, new { @class = "col col-md-2 col-md-offset-2 control-label" })
+            @Html.TextBoxFor(u => u.FirstName, new { @class = "col col-md-5 form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.LastName, new { @class = "col col-md-2 col-md-offset-2 control-label" })
+            @Html.TextBoxFor(u => u.LastName, new { @class = "col col-md-4 form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.Email, new { @class = "col col-md-2 col-md-offset-2 control-label" })
+            @Html.TextBoxFor(u => u.Email, new { @class = "col col-md-4 form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.Password, new { @class = "col col-md-2 col-md-offset-2 control-label" })
+            @Html.PasswordFor(u => u.Password, new { @class = "col col-md-4 form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.RepeatPassword, new { @class = "col col-md-2 col-md-offset-2 control-label" })
+            @Html.PasswordFor(u => u.RepeatPassword, new { @class = "col col-md-4 form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.Age, new { @class = "col col-md-2 col-md-offset-2 control-label" })
+            @Html.TextBoxFor(u => u.Age, new { @class = "col col-md-4 form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.Gender, new { @class = "col col-md-2 col-md-offset-2 control-label" })
+            @Html.DropDownListFor(u => u.Gender, new SelectList(new[] { "Male", "Female" }), new { @class = "col col-md-4 form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.Phone, new { @class = "col col-md-2 col-md-offset-2 control-label" })
+            @Html.TextBoxFor(u => u.Phone, new { @class = "col col-md-4 form-control" })
+        </div>
+
+        <div class="text-center"><input class="btn btn-default" type="submit" value="Registrate" /></div>
+
+        <div id="results"></div>
     }
-    <div id="results"></div>
+
 </div>
