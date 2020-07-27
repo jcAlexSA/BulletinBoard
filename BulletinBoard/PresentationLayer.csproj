@@ -155,6 +155,7 @@
     </Compile>
     <Compile Include="Infrastructure\AutofacConfigurator.cs" />
     <Compile Include="Infrastructure\Constants.cs" />
+    <Compile Include="Models\Adverts\AdvertResponse.cs" />
     <Compile Include="Models\Users\CreateUserRequest.cs" />
     <Compile Include="Models\Users\SignInUserRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -208,6 +209,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\registration.js" />
     <Content Include="Scripts\src\index.js" />
     <Content Include="Scripts\src\methods\defaults.js" />
     <Content Include="Scripts\src\methods\destroy.js" />

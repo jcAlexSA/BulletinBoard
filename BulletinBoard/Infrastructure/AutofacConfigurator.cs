@@ -34,6 +34,7 @@ namespace BulletinBoard.Infrastructure
 
             //registrate managers;
             builder.RegisterType<UsersManager>().As<IUsersManager>();
+            builder.RegisterType<AdvertsManager>().As<IAdvertsManager>();
 
             var container = builder.Build();
 

@@ -63,8 +63,7 @@ namespace BulletinBoard.Controllers
 
                 return RedirectToAction("Index", "Adverts");
             }
-
-            return View("Registration");
+            return View();
         }
 
         [HttpGet]

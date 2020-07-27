@@ -30,13 +30,15 @@ h1, h2, h3, h4, h5, h6 .page-header {
     margin: 10px 0;
 }
 
-footer {
-    position: fixed;
-    width: 100%;
-    background-color: white;
+.card .date-time {
+    color: lightgrey;
+    font-size: x-small;
+    text-align: right;
 }
 
 footer {
+    width: 100%;
+    background-color: white;
     bottom: 0;
     margin-top: 50px;
 }

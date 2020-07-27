@@ -9,5 +9,6 @@ namespace Core.Interfaces.Repositories
 {
     public interface IAdvertsRepository : IBaseRepository<Advert>
     {
+        Advert[] GetAdverts();
     }
 }

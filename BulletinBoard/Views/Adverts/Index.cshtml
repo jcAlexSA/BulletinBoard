@@ -1,15 +1,12 @@
-﻿@model IEnumerable<Core.Models.Advert>
+﻿@model IEnumerable<BulletinBoard.Models.Adverts.AdvertResponse>
 
 @{
     ViewBag.Title = "Home Page";
 }
 
 <div class="row">
-    <div>@Html.Partial("_Advert", null)</div>
-    <div>@Html.Partial("_Advert", null)</div>
-    <div>@Html.Partial("_Advert", null)</div>
-    <div>@Html.Partial("_Advert", null)</div>
-    <div>@Html.Partial("_Advert", null)</div>
-    <div>@Html.Partial("_Advert", null)</div>
-    <div>@Html.Partial("_Advert", null)</div>
+    @foreach (var advert in Model)
+    {
+        <div class="col col-md-6 offset-3">@Html.Partial("_Advert", advert)</div>
+    }
 </div>

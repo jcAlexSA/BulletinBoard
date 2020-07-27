@@ -55,6 +55,7 @@
     <Compile Include="DTOs\SignInUserDto.cs" />
     <Compile Include="DTOs\UserDto.cs" />
     <Compile Include="DataContext\IDataContext.cs" />
+    <Compile Include="Interfaces\Managers\IAdvertsManager.cs" />
     <Compile Include="Interfaces\Managers\IUsersManager.cs" />
     <Compile Include="Interfaces\Repositories\IAdvertsRepository.cs" />
     <Compile Include="Interfaces\Repositories\IBaseRepository.cs" />

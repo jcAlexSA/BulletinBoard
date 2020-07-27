@@ -14,5 +14,15 @@ namespace DataAccessLayer.Repositories
         public AdvertsRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
+
+        public Advert[] GetAdverts()
+        {
+            var adverts = this.DbContext.Set<Advert>()
+                .Select(a => a)
+                .OrderByDescending(a => a.PublishDate)
+                .ToArray();
+
+            return adverts;
+        }
     }
 }
